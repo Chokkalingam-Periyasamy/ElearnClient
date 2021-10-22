@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Elearn.ElearnModel.Module>
+
+@{
+    ViewData["Title"] = "ViewAllModules";
+}
+
+<h1>ViewAllModules</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Courseid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Modulename)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Video)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Courseid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modulename)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Video)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Moduleid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Moduleid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Moduleid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

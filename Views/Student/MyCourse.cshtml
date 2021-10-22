@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Elearn.ElearnModel.Course>
+
+@{
+    ViewData["Title"] = "MyCourse";
+}
+<style>
+    #divprofile {
+        border: solid;
+        background-color: aliceblue;
+        margin-top: 20px;
+    }
+
+    #c {
+        background-color: aliceblue;
+        margin-left: 4px;
+        margin-top: 20px;
+    }
+
+    #d {
+        margin-top: 20px;
+    }
+
+    #i {
+        margin-top: 20px;
+        border-radius: 50px;
+    }
+
+    #e {
+        margin-left: 70px;
+    }
+
+    .c1 {
+        text-align: center;
+    }
+</style>
+<a class="btn btn-warning" asp-action="Course2" asp-controller="Course" onclick="location.href='@Url.Action("Course", "Course2" )'">All Courses</a>
+
+<div class="container" id="e">
+    <div class="row">
+
+        <div class="col">
+            <div class="row">
+
+                @foreach (var item in Model)
+                {
+
+                    <div class="card" id="c" style="width:250px">
+                        <img class="card-img-top" src="@Url.Content(item.Image)" alt="Card image" style="width:100%">
+                        <div class="card-body c1">
+
+                            <b>@item.Coursename</b>
+                            <br>
+                            @item.Description
+                        </div>
+
+
+                        <div class="c1">
+                            <a class="btn btn-primary" asp-controller="Module" asp-action="StudentModule" asp-route-id="@item.Courseid">View</a>
+                            @*<a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Courseid">Details</a>*@
+                        </div>
+                        <br>
+                    </div>
+
+
+                }
+            </div>
+        </div>
+
+
+    </div>
+</div>

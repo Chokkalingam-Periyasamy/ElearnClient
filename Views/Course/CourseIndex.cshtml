@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Elearn.ElearnModel.Course>
+
+@{
+    ViewData["Title"] = "CourseIndex";
+}
+
+<p>
+    <a class="btn btn-outline-success" asp-action="AddCourse">New Course</a>
+</p>
+
+<style>
+    #divprofile {
+        border: solid;
+        background-color: darkgray;
+        margin-top: 20px;
+    }
+
+    #c {
+        background-color: lemonchiffon;
+        margin-left: 4px;
+        margin-top: 20px;
+    }
+    #d {
+        margin-top: 20px;
+    }
+
+    #i {
+        margin-top: 20px;
+        border-radius: 50px;
+    }
+       
+
+    .c1 {
+        text-align: center;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="row">
+
+                @foreach (var item in Model)
+                {
+
+                <div class="card" id="c" style="width:270px">
+                    <img class="card-img-top" src="@Url.Content(item.Image)" alt="Card image" style="width:100%">
+                    <div class="card-body c1">
+
+
+                        <b>@item.Coursename</b>
+                        <br>
+                        @item.Description
+                    </div>
+
+
+                    <div class="c1">
+                        <a class="btn btn-primary" asp-action="Update" asp-route-id="@item.Courseid">Edit</a>
+                        <a class="btn btn-primary" asp-controller="Module" asp-action="Create" asp-route-id="@item.Courseid">Add Module</a>
+                      
+
+
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Courseid">Delete</a>
+                    </div>
+                   <br />
+                </div>
+
+
+                }
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+

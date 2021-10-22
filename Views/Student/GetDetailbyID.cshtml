@@ -1,0 +1,133 @@
+﻿@model Elearn.ElearnModel.User
+
+@{
+    ViewData["Title"] = "GetDetailbyID";
+}
+
+<style>
+
+
+    #c {
+        background-color: #86C232;
+        margin-left: 460px;
+        margin-top: 20px;
+    }
+
+    #d {
+        margin-top: 20px;
+    }
+
+    #i {
+        margin-top: 20px;
+        border-radius: 50px;
+    }
+
+
+    .c1 {
+        text-align: center;
+    }
+</style>
+@*<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Name)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Name)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Age)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Age)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Gender)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Gender)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Address)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Address)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Mobile)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Mobile)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Email)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Email)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Password)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Password)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Image)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Image)
+    </dd>
+</dl>
+
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Userid">Edit</a> |
+    <a asp-controller="Course" asp-action="Course2">Back to List</a>
+</div>*@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="row">
+
+            
+
+                    <div class="card" id="c" style="width:270px">
+                        <div class="card-body c1">
+
+
+                            <b>  @Html.DisplayFor(model => model.Name)</b>
+                            <br>
+                            @Html.DisplayFor(model => model.Age)
+                            <br />
+                            @Html.DisplayFor(model => model.Gender)
+                            <br />
+                            @Html.DisplayFor(model => model.Address)
+                            <br />
+                            @Html.DisplayFor(model => model.Mobile)
+                            <br />
+                            @Html.DisplayFor(model => model.Email)
+                            <br>
+
+                        </div>
+
+
+                        <div class="c1">
+                            <div>
+                                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.Userid">Edit</a> |
+                                <a class="btn btn-primary" asp-controller="Course" asp-action="Course2">Back to List</a>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+
+
+                
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
