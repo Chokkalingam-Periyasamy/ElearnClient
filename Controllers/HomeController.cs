@@ -1,10 +1,14 @@
-﻿using Elearn.Models;
+﻿using Elearn.ElearnModel;
+using Elearn.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace Elearn.Controllers
@@ -18,7 +22,7 @@ namespace Elearn.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public ActionResult Index()
         {
             return View();
         }
